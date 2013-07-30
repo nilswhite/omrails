@@ -7,10 +7,12 @@ gem 'devise'
 
 group :production do
 	gem 'pg'
+	gem 'unicorn'
 end
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'webrick'
 end
 
 # Gems used only for assets and not required
