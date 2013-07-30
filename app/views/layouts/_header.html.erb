@@ -9,7 +9,8 @@
         <span class="icon-bar"></span>
       </a>
       <!-- leaving the brand out here so it's shown all the time even when the page goes small-->
-      <a class="brand" class="text-success" href="#">VCDrive</a>
+     
+      <%= link_to "VCDrive", root_path, class: "brand" %>
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
       	<ul class="nav">
@@ -18,7 +19,15 @@
           <li><%= link_to "Courses", courses_path %></li>
     	  </ul>
     	  <ul class="nav pull-right">
-    		  <li><%= link_to 'Login', '#' %></li>
+          <!-- Could add in a search bar -->
+          <% if user_signed_in? %>
+            <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <!-- Could add in an inline login field so users can login from any page (in header) -->
+            <li><%= link_to 'Login', new_user_session_path %></li>
+          <% end %>
+    		  
     	  </ul>
       </div>
  

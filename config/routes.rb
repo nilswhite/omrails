@@ -1,5 +1,13 @@
 Omrails::Application.routes.draw do
 
+  devise_for :views
+
+# added "do get "'/users/sign_out' => 'devise/sessions#destroy'" to get around error: No route matches [GET] "/users/sign_out"
+devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
+
+# maybe add back in - created by devise install (incorrect I think)
+# devise_for :installs
+
 get 'about' => 'pages#about'
 get 'courses' => 'pages#courses'
 

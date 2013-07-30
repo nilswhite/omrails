@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 gem 'rails', '3.2.12'
-# gem 'ruby', '1.9.3'
+gem 'jquery-rails'
+gem 'devise'
 
 group :production do
 	gem 'pg'
@@ -12,7 +13,6 @@ group :development, :test do
 	gem 'sqlite3'
 end
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -21,3 +21,4 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass', '~> 2.3.2.1'
 end
+
